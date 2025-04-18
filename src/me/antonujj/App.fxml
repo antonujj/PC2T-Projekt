@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.antonujj.AppController">
+   <bottom>
+      <HBox prefHeight="50.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="studAdd" mnemonicParsing="false" onAction="#studAdd" prefHeight="50.0" prefWidth="120.0" text="Přidat Studenta">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="studDel" mnemonicParsing="false" onAction="#studDel" prefHeight="50.0" prefWidth="120.0" text="Odebrat Studenta">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="studAddMark" mnemonicParsing="false" onAction="#studAddMark" prefHeight="50.0" prefWidth="120.0" text="Zadat Známku">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="studGetByID" mnemonicParsing="false" onAction="#studGetByID" prefHeight="50.0" prefWidth="120.0" text="Výpis dle ID">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="studAbility" mnemonicParsing="false" onAction="#studAbility" prefHeight="50.0" prefWidth="120.0" text="Spustit Dovednost">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="studAverage" mnemonicParsing="false" onAction="#studAverage" prefHeight="50.0" prefWidth="120.0" text="Průměry">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="studStatTotal" mnemonicParsing="false" onAction="#studStatTotal" prefHeight="50.0" prefWidth="120.0" text="Počet Studentů">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="studSaveToFile" mnemonicParsing="false" onAction="#studSaveToFile" prefHeight="50.0" prefWidth="120.0" text="Uložit do Souboru">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="studLoadFromFile" mnemonicParsing="false" onAction="#studLoadFromFile" prefHeight="50.0" prefWidth="120.0" text="Načíst ze Souboru">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="saveDB" mnemonicParsing="false" onAction="#saveDB" prefHeight="50.0" prefWidth="120.0" text="Ulož do DB">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="Exit" mnemonicParsing="false" onAction="#exit" prefHeight="50.0" prefWidth="120.0" text="Vypnout">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <TableView fx:id="tableView" prefHeight="515.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn id="studID" fx:id="studID" prefWidth="75.0" text="ID" />
+            <TableColumn id="studObor" fx:id="studObor" prefWidth="120.0" text="Obor" />
+          <TableColumn id="studPrijmeni" fx:id="studPrijmeni" prefWidth="75.0" text="Příjmení" />
+            <TableColumn id="studJmeno" fx:id="studJmeno" prefWidth="75.0" text="Jméno" />
+            <TableColumn id="studNarozeni" fx:id="studNarozeni" prefWidth="115.3333740234375" text="Datum narození" />
+            <TableColumn id="studZnamky" fx:id="studZnamky" prefWidth="200.0" text="Známky" />
+            <TableColumn id="studPrumer" fx:id="studPrumer" prefWidth="75.0" text="Průměr" />
+        </columns>
+      </TableView>
+   </center>
+   <top>
+      <StackPane alignment="CENTER_RIGHT" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER_RIGHT">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <RadioButton fx:id="vse" contentDisplay="CENTER" mnemonicParsing="false" onAction="#displayAll" text="Vše">
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="skupinaStud" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="telekomunikace" contentDisplay="CENTER" mnemonicParsing="false" onAction="#displayTelekomunikace" text="Telekomunikace" toggleGroup="$skupinaStud">
+                     <padding>
+                        <Insets right="30.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </RadioButton>
+                  <RadioButton fx:id="kyberbezpecnost" contentDisplay="CENTER" mnemonicParsing="false" onAction="#displayKyberbezpecnost" text="Kyberbezpečnost" toggleGroup="$skupinaStud">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </RadioButton>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <Button fx:id="aboutButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleAbout" prefHeight="50.0" prefWidth="140.0" text="O aplikaci" textAlignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <StackPane.margin>
+                  <Insets right="50.0" />
+               </StackPane.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </StackPane>
+   </top>
+</BorderPane>

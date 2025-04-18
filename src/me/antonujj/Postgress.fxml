@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.antonujj.PostgressController">
+   <center>
+      <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="114.0" text="IP" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="113.0" text="Port" />
+                  <Label contentDisplay="CENTER" prefHeight="25.0" text="Databáze" />
+                  <Label prefHeight="25.0" text="Uživatel" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="113.0" text="Heslo" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <TextField fx:id="IPTextField" promptText="127.0.0.1" />
+                  <TextField fx:id="PortTextField" promptText="5432" />
+                  <TextField fx:id="DatabaseTextField" promptText="database" />
+                  <TextField fx:id="UserTextField" promptText="user" />
+                  <PasswordField fx:id="PasswordTextField" promptText="password" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <padding>
+      <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+   </padding>
+   <bottom>
+      <Button fx:id="connectButton" mnemonicParsing="false" onAction="#connectDB" prefHeight="40.0" prefWidth="90.0" text="Připojit se" BorderPane.alignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+   </bottom>
+   <top>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="BackToChoiceButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#backToChoiceAction" prefHeight="50.0" prefWidth="100.0" text="Zpět">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <VBox alignment="CENTER" prefHeight="102.0" prefWidth="325.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="68.0" prefWidth="193.0" text="Zadejte údaje">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ConnInfoLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="370.0" text="undefined" visible="false">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

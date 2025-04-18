@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.antonujj.DbDialogController">
+   <top>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="71.0" prefWidth="252.0" text="Zvolte typ připojení k databázi" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </top>
+   <right>
+      <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#sqliteConnect" text="SQLite" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </right>
+   <left>
+      <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#postgresqlConnect" text="PostgreSQL" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </left>
+   <padding>
+      <Insets left="100.0" right="100.0" top="100.0" />
+   </padding>
+</BorderPane>

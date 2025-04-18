@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.antonujj.SqliteController">
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <padding>
+      <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+   </padding>
+   <center>
+      <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#connectDB" prefHeight="128.0" prefWidth="411.0" text="Otevřít soubor *.DB" BorderPane.alignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+   </center>
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="BackToChoiceButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#backToChoiceAction" prefHeight="50.0" prefWidth="90.0" text="Zpět">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="312.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="68.0" prefWidth="193.0" text="Zvolte soubor">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ConnInfoLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="370.0" text="undefined" visible="false">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
